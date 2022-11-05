@@ -1,6 +1,8 @@
 __pycache__/
 build/
 Data/
+smpl_pytorch/model
+pytorch3d-0.4.0/
 *.zip
 *.pkl
 *.h5

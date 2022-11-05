@@ -10,21 +10,24 @@ ROOT1=/home/mas/proj/study/computer_vision/pifuhd # PIFUHD installed directory
 ROOT2=/home/mas/proj/study/computer_vision/lightweight-human-pose-estimation.pytorch # lightweight openpose installed directory
 
 
-echo "Running Preprocess..."
+echo "[INFO] Running Preprocess..."
 # If you never run below, uncomment below.
 #python people_snapshot_process.py --root $ROOT/people_snapshot_public/female-3-casual --save_root $ROOT/female-3-casual
 
-echo "Extracting normals..."
+echo "[INFO] Extracting normals..."
 cp generate_normals.py $ROOT1/
 cp generate_boxs.py $ROOT2/
 (
+    echo "[INFO] Generating boxs..."
     cd $ROOT2
     python generate_boxs.py --data $ROOT/female-3-casual/imgs
 )
 (
+    echo "[INFO] Generating normals..."
     cd $ROOT1
     python generate_normals.py --imgpath $ROOT/female-3-casual/imgs
-) 
+)
+echo "[INFO] Start training..."
 CUDA_VISIBLE_DEVICES=0 python train.py --gpu-ids 0 --conf config.conf --data $ROOT/female-3-casual --save-folder result
 
 echo "Running Inference..."
