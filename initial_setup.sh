@@ -15,3 +15,7 @@ echo "download SMPL models"
 # (
 #     wget -P smpl_pytorch/model/ https://mailustceducn-my.sharepoint.com/personal/jby1993_mail_ustc_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjby1993%5Fmail%5Fustc%5Fedu%5Fcn%2FDocuments%2Fmodel&ga=1
 # )
+
+echo "[INFO] Running Preprocess..."
+# download dataset to ROOT 
+python people_snapshot_process.py --root $ROOT/people_snapshot_public/female-3-casual --save_root $ROOT/female-3-casual

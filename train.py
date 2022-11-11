@@ -11,7 +11,7 @@ from MCAcc import Seg3dLossless
 import utils
 parser = argparse.ArgumentParser(description='neu video body rec')
 parser.add_argument('--gpu-ids',nargs='+',type=int,metavar='IDs',
-					help='gpu ids')
+					help='gpu ids') # metavar: Alternate display name for the argument as shown in help 
 parser.add_argument('--conf',default=None,metavar='M',
 					help='config file')
 parser.add_argument('--data',default=None,metavar='M',
