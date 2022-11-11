@@ -2,7 +2,8 @@ __pycache__/
 build/
 Data/
 smpl_pytorch/model
-pytorch3d-0.4.0/
+pytorch3d-0.4.0
+.ipynb_checkpoints/
 *.zip
 *.pkl
 *.h5
